@@ -9,6 +9,19 @@
     tools:context="ac.kotlintest.view.fragments.ChooseYourHoroscope">
 
 
+    <!--<ImageView
+        android:id="@+id/spaceStarBg"
+        android:layout_width="500dp"
+        android:src="@drawable/space_star"
+        android:layout_height="500dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />-->
+
     <Button
         android:text="getMyHoroscope"
         android:layout_width="wrap_content"
@@ -18,55 +31,60 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <ImageView
-        android:background="@drawable/square"
         android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/gemini"
         android:id="@+id/gemini"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <ImageView
-        android:background="@drawable/square"
         android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/virgo"
         android:id="@+id/virgo"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4" />
 
     <ImageView
-        android:background="@drawable/square"
         android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/leo"
         android:id="@+id/leo"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline2" />
 
 
     <ImageView
-        android:background="@drawable/square"
         android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/aries"
         android:id="@+id/aries"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintTop_toTopOf="@+id/guideline7"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline2"
+        app:layout_constraintRight_toLeftOf="@+id/guideline4"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8" />
 
     <ImageView
-        android:background="@drawable/square"
         android:padding="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:srcCompat="@drawable/cancer"
         android:id="@+id/cancer"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintRight_toLeftOf="@+id/guideline2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7" />
 
     <!-- android:background="@drawable/square" -->
     <ImageView
@@ -75,88 +93,105 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/scorpio"
         android:id="@+id/scorpio"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline2"
+        app:layout_constraintRight_toLeftOf="@+id/guideline4" />
 
 
 
     <ImageView
-        android:background="@drawable/square"
         android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/libra"
         android:id="@+id/libra"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4" />
 
     <ImageView
-        android:background="@drawable/square"
         android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/pisces"
         android:id="@+id/pisces"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintTop_toTopOf="@+id/guideline7"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline2"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp" />
 
     <ImageView
-        android:background="@drawable/square"
         android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/taurus"
         android:id="@+id/taurus"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintRight_toLeftOf="@+id/guideline2"
+        android:layout_marginEnd="16dp" />
 
 
 
 
     <ImageView
-        android:background="@drawable/square"
         android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/capricorn"
         android:id="@+id/capricorn"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline2"
+        app:layout_constraintRight_toLeftOf="@+id/guideline4"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp" />
 
     <ImageView
-        android:background="@drawable/square"
         android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/sagittarius"
         android:id="@+id/sagittarius"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintRight_toLeftOf="@+id/guideline4"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline2"
+        android:layout_marginStart="16dp" />
 
     <ImageView
-        android:background="@drawable/square"
         android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/aquarius"
         android:id="@+id/aquarius"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintTop_toTopOf="@+id/guideline7"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+         />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/guideline"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteY="113dp"
+        tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="0dp"
         app:layout_constraintGuide_percent="0.25831702" />
 
@@ -167,7 +202,7 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.33333334"
         tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="114dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
@@ -175,7 +210,7 @@
         android:id="@+id/guideline4"
         android:orientation="vertical"
         tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="227dp"
+        tools:layout_editor_absoluteX="0dp"
         app:layout_constraintGuide_percent="0.6666667" />
 
     <android.support.constraint.Guideline
@@ -184,7 +219,7 @@
         android:id="@+id/guideline6"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.50489235"
-        tools:layout_editor_absoluteY="221dp"
+        tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="0dp" />
 
     <android.support.constraint.Guideline
@@ -192,7 +227,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/guideline7"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteY="331dp"
+        tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="0dp"
         app:layout_constraintGuide_percent="0.7573385" />
 
@@ -201,7 +236,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/guideline8"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteY="437dp"
+        tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="0dp"
         app:layout_constraintGuide_percent="1.0" />
 

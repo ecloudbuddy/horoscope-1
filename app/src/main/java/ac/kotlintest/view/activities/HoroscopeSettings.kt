@@ -4,13 +4,7 @@ import ac.kotlintest.R
 import ac.kotlintest.view.adapters.SettingsPagerAdapter
 import ac.kotlintest.view.fragments.ChooseYourHoroscope
 import ac.kotlintest.view.fragments.DailyHoroscopeFragment
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
-import android.renderscript.Allocation
-import android.renderscript.RenderScript
-import android.renderscript.ScriptIntrinsicBlur
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -18,12 +12,18 @@ import kotlinx.android.synthetic.main.activity_horoscope_settings.*
 
 internal class HoroscopeSettings : AppCompatActivity() {
 
+    var chooseYourHoroscopeFragment : ChooseYourHoroscope? = null
+    var dailyHoroscopeFragment : DailyHoroscopeFragment? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_horoscope_settings)
 
+        chooseYourHoroscopeFragment = ChooseYourHoroscope()
+        dailyHoroscopeFragment = DailyHoroscopeFragment()
+
         settingsViewPager(
-                addSettingsFragmentToAdapter(ChooseYourHoroscope(), DailyHoroscopeFragment())
+                addSettingsFragmentToAdapter(chooseYourHoroscopeFragment!!, dailyHoroscopeFragment!!)
         )
     }
 
@@ -48,33 +48,22 @@ internal class HoroscopeSettings : AppCompatActivity() {
         viewpager.adapter = settingsAdapter
     }
 
-    fun previewNextPage(pos : Int) { viewpager.currentItem = viewpager.currentItem + pos }
+    fun nextPage() { viewpager.currentItem = viewpager.currentItem + 1 }
+    fun previewPage() { viewpager.currentItem = viewpager.currentItem - 1 }
 
-    //blur bg for each horoscope elements
-    fun blur(view : View){
-        viewpager.buildDrawingCache()
-        val bkg = viewpager.drawingCache
+    fun clickItemHoroscope(v: View?){  chooseYourHoroscopeFragment!!.clickItemHoroscope(v) }
 
-        val radius : Float = 20f
+    fun setItemHoroscopePosition(pos : String) { dailyHoroscopeFragment!!.horoscopePosition = pos }
 
-        val overlay = Bitmap.createBitmap( view.measuredWidth.toInt(), view.measuredHeight.toInt(), Bitmap.Config.ARGB_8888)
-        val canvas = Canvas(overlay)
+    fun getCurrentHoroscope() { dailyHoroscopeFragment!!.getCurrentHoroscope() }
 
-        canvas.translate(-view.left.toFloat(), -view.top.toFloat())
-        canvas.drawBitmap(bkg, 0f, 0f, null)
+    override fun onBackPressed(){
+        var count = viewpager.currentItem
 
-        val rs = RenderScript.create(this)
-        val overLayAlloc = Allocation.createFromBitmap(rs, overlay)
-        val blur = ScriptIntrinsicBlur.create(rs, overLayAlloc.element)
-
-        blur.setInput(overLayAlloc)
-        blur.setRadius(radius)
-        blur.forEach(overLayAlloc)
-        overLayAlloc.copyTo(overlay)
-
-        view.setBackground(BitmapDrawable(resources, overlay))
-        rs.destroy()
+        if(count == 0) super.onBackPressed()
+        else previewPage()
     }
+    
 }
 
 

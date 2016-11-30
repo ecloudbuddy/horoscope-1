@@ -7,30 +7,20 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 
-class ChooseYourHoroscope : Fragment() {
-
-    var image : ImageView? = null
+class ChooseYourHoroscope : Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_welcome, container, false)
-
-        view.findViewById(R.id.button).setOnClickListener { (activity as HoroscopeSettings).previewNextPage(1) }
-        image = view.findViewById(R.id.scorpio) as ImageView?
-
-        applyBlur()
+        val view = inflater.inflate(R.layout.fragment_welcome_old, container, false)
 
         return view;
     }
 
-    fun applyBlur() {
-        image!!.viewTreeObserver.addOnPreDrawListener {
-            (activity as HoroscopeSettings).blur(image!!)
-            true
-        }
+    fun clickItemHoroscope(v: View?) {
+        (activity as HoroscopeSettings).setItemHoroscopePosition(v!!.tag.toString())
+        (activity as HoroscopeSettings).nextPage()
+        (activity as HoroscopeSettings).getCurrentHoroscope()
     }
-
 
 }
