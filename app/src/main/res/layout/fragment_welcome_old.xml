@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:id="@+id/main_container"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
@@ -12,15 +13,6 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true">
 
-        <com.github.mmin18.widget.RealtimeBlurView
-            android:id="@+id/blur_view"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            app:realtimeBlurRadius="20dp"
-            app:realtimeOverlayColor="#8000"
-            android:layout_alignBottom="@+id/container_horo"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
 
         <LinearLayout
             android:id="@+id/container_horo"
@@ -37,33 +29,40 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:background="@drawable/border"
                     android:id="@+id/aries"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:tag="1"
+                    android:layout_marginRight="2dp"
                     android:onClick="clickItemHoroscope"
                     android:src="@drawable/aries" />
 
                 <ImageView
+                    android:background="@drawable/border"
                     android:id="@+id/taurus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
+                    android:layout_marginRight="2dp"
                     android:tag="2"
                     android:onClick="clickItemHoroscope"
                     android:src="@drawable/taurus" />
 
                 <ImageView
+                    android:background="@drawable/border"
                     android:id="@+id/gemini"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
+                    android:layout_marginRight="2dp"
                     android:tag="3"
                     android:onClick="clickItemHoroscope"
                     android:src="@drawable/gemini" />
 
                 <ImageView
+                    android:background="@drawable/border"
                     android:id="@+id/cancer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -76,41 +75,49 @@
             </LinearLayout>
 
             <LinearLayout
+
                 android:id="@+id/linearLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="2dp"
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:background="@drawable/border"
                     android:id="@+id/leo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
+                    android:layout_marginRight="2dp"
                     android:tag="5"
                     android:onClick="clickItemHoroscope"
                     android:src="@drawable/leo" />
 
                 <ImageView
+                    android:background="@drawable/border"
                     android:id="@+id/virgo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
+                    android:layout_marginRight="2dp"
                     android:tag="6"
                     android:onClick="clickItemHoroscope"
                     android:src="@drawable/virgo" />
 
                 <ImageView
+                    android:background="@drawable/border"
                     android:id="@+id/libra"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
+                    android:layout_marginRight="2dp"
                     android:tag="7"
                     android:onClick="clickItemHoroscope"
                     android:src="@drawable/libra" />
 
 
                 <ImageView
+                    android:background="@drawable/border"
                     android:id="@+id/scorpio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -127,11 +134,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/linearLayout"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="2dp"
                 android:orientation="horizontal">
 
 
                 <ImageView
+                    android:layout_marginRight="2dp"
+                    android:background="@drawable/border"
                     android:id="@+id/sagittarius"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -141,6 +150,8 @@
                     android:src="@drawable/sagittarius" />
 
                 <ImageView
+                    android:layout_marginRight="2dp"
+                    android:background="@drawable/border"
                     android:id="@+id/capricorn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -150,6 +161,8 @@
                     android:src="@drawable/capricorn" />
 
                 <ImageView
+                    android:layout_marginRight="2dp"
+                    android:background="@drawable/border"
                     android:id="@+id/aquarius"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -159,6 +172,8 @@
                     android:src="@drawable/aquarius" />
 
                 <ImageView
+                    android:layout_marginRight="2dp"
+                    android:background="@drawable/border"
                     android:id="@+id/pisces"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

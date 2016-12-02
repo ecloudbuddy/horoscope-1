@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/viewpager"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -11,39 +11,72 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:src="@drawable/aries"
-            android:id="@+id/logo_horoscope"
+        <LinearLayout
+            android:background="@drawable/border"
+            android:orientation="vertical"
+            android:padding="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/logo_horoscope"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ac.kotlintest.view.fragments.TextViewOpenSans
+                android:id="@+id/nameHoroscope"
+                android:textColor="#fff"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ac.kotlintest.view.fragments.TextViewOpenSans
+                        android:layout_width="wrap_content"
+                        android:text="Сегодня"
+                        android:gravity="left"
+                        android:layout_weight="1"
+                        android:textColor="#fff"
+                        android:layout_height="wrap_content" />
+
+                    <ac.kotlintest.view.fragments.TextViewOpenSans
+                        android:id="@+id/descriptionToday"
+                        android:textColor="#fff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/border"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:text="Сегодня"
-                    android:gravity="left"
-                    android:layout_weight="1"
-                    android:textColor="#fff"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:id="@+id/descriptionToday"
-
-                    android:text="Описание"
-                    android:textColor="#fff"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
+                <ac.kotlintest.view.fragments.TextViewOpenSans
                     android:layout_width="wrap_content"
                     android:text="Завтра"
                     android:gravity="left"
@@ -51,14 +84,24 @@
                     android:textColor="#fff"
                     android:layout_height="wrap_content" />
 
-                <TextView
+                <ac.kotlintest.view.fragments.TextViewOpenSans
                     android:id="@+id/descriptionTomorrow"
-                    android:text="Описание"
                     android:textColor="#fff"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-                <TextView
+             </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:background="@drawable/border"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ac.kotlintest.view.fragments.TextViewOpenSans
                     android:layout_width="wrap_content"
                     android:text="Послезавтра"
                     android:gravity="left"
@@ -66,12 +109,13 @@
                     android:textColor="#fff"
                     android:layout_height="wrap_content" />
 
-                <TextView
+                <ac.kotlintest.view.fragments.TextViewOpenSans
                     android:id="@+id/descriptionDayAfterTomorrow"
-                    android:text="Описание"
                     android:textColor="#fff"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
+
+                </LinearLayout>
 
 
             </LinearLayout>

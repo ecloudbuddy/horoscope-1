@@ -1,6 +1,22 @@
 <resources>
-    <string name="app_name">KotlinTest</string>
+    <string name="app_name">Horoscope 3000</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
     <string name="configure">Configure</string>
+
+    <string name="check_internet">Пожалуйста проверьте интернет</string>
+
+    <string name="aries">Овен</string>
+    <string name="taurus">Телец</string>
+    <string name="gemini">Близницы</string>
+    <string name="cancer">Рак</string>
+    <string name="leo">Лев</string>
+    <string name="virgo">Дева</string>
+    <string name="libra">Весы</string>
+    <string name="scorpio">Скорпион</string>
+    <string name="sagittarius">Стрелец</string>
+    <string name="capricorn">Козерог</string>
+    <string name="aquarius">Водолей</string>
+    <string name="pisces">Рыбы</string>
+
 </resources>
