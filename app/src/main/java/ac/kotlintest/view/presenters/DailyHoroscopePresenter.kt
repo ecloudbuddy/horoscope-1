@@ -3,6 +3,7 @@ package ac.kotlintest.view.presenters
 import ac.kotlintest.model.java.DailyHoroscopeJ
 import ac.kotlintest.modules.AppModule
 import android.util.Log
+import org.greenrobot.eventbus.EventBus
 import rx.Subscriber
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
@@ -26,9 +27,11 @@ open class DailyHoroscopePresenter {
                     override fun onCompleted() {}
 
                     override fun onNext(dailyHoroscope : DailyHoroscopeJ) {
-                        var today : String? = dailyHoroscope.getAriesToday()
-                        Log.e("today", today)
+                        /* var today : String? = dailyHoroscope.getAriesToday()
+                        Log.e("today", today)*/
+                        EventBus.getDefault().post(dailyHoroscope)
                     }
+
                 })
     }
 

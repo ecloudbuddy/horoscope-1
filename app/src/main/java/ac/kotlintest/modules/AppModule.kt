@@ -17,7 +17,7 @@ open class AppModule{
         if(retrofit == null){
             val logging = LogInterceptor()
             var httpClient = OkHttpClient.Builder()
-            httpClient.addInterceptor(logging)
+            //httpClient.addInterceptor(logging)
             httpClient.readTimeout(10, TimeUnit.SECONDS)
             httpClient.connectTimeout(10, TimeUnit.SECONDS)
 
