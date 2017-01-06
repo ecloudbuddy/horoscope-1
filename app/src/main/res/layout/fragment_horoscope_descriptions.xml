@@ -6,114 +6,319 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:padding="10dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <LinearLayout
-            android:background="@drawable/border"
-            android:orientation="vertical"
-            android:padding="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/logo_horoscope"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <ac.kotlintest.view.fragments.TextViewOpenSans
-                android:id="@+id/nameHoroscope"
-                android:textColor="#fff"
-                android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-
-
-        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_marginLeft="5dp"
-                android:orientation="vertical"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/logo_horoscope"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/aries" />
+
+                    <ac.kotlintest.view.fragments.TextViewOpenSans
+                        android:id="@+id/nameHoroscope"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:textColor="#fff" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:background="@drawable/border"
-                    android:orientation="vertical"
-                    android:padding="5dp"
+                    android:layout_marginTop="50dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
 
-                    <ac.kotlintest.view.fragments.TextViewOpenSans
-                        android:layout_width="wrap_content"
-                        android:text="Сегодня"
-                        android:gravity="left"
-                        android:layout_weight="1"
-                        android:textColor="#fff"
-                        android:layout_height="wrap_content" />
+                    <RelativeLayout
+                        android:id="@+id/daily"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/border"
+                        android:padding="10dp">
 
-                    <ac.kotlintest.view.fragments.TextViewOpenSans
-                        android:id="@+id/descriptionToday"
-                        android:textColor="#fff"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Общий"
+                            android:textColor="#fff" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/ero"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/border"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:gravity="center"
+                            android:text="Эротический "
+                            android:textColor="#fff" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/anti"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/border"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Антигороскоп"
+                            android:textColor="#fff" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/bus"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/border"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Бизнес"
+                            android:textColor="#fff" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/health"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/border"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Здоровья"
+                            android:textColor="#fff" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/cook"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/border"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Кулинарный"
+                            android:textColor="#fff" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/love"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/border"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Любовный "
+                            android:textColor="#fff" />
+
+                    </RelativeLayout>
 
                 </LinearLayout>
 
-            <LinearLayout
-                android:background="@drawable/border"
-                android:orientation="vertical"
-                android:layout_marginTop="5dp"
-                android:padding="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            </ScrollView>
 
-                <ac.kotlintest.view.fragments.TextViewOpenSans
-                    android:layout_width="wrap_content"
-                    android:text="Завтра"
-                    android:gravity="left"
-                    android:layout_weight="1"
-                    android:textColor="#fff"
-                    android:layout_height="wrap_content" />
 
-                <ac.kotlintest.view.fragments.TextViewOpenSans
-                    android:id="@+id/descriptionTomorrow"
-                    android:textColor="#fff"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+        </LinearLayout>
 
-             </LinearLayout>
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
             <LinearLayout
-                android:layout_marginTop="5dp"
-                android:background="@drawable/border"
-                android:orientation="vertical"
-                android:padding="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical">
 
-                <ac.kotlintest.view.fragments.TextViewOpenSans
-                    android:layout_width="wrap_content"
-                    android:text="Послезавтра"
-                    android:gravity="left"
-                    android:layout_weight="1"
-                    android:textColor="#fff"
-                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="5dp">
 
-                <ac.kotlintest.view.fragments.TextViewOpenSans
-                    android:id="@+id/descriptionDayAfterTomorrow"
-                    android:textColor="#fff"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    <ac.kotlintest.view.fragments.TextViewOpenSans
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="Вчера"
+                        android:textColor="#fff" />
+
+                    <ac.kotlintest.view.fragments.TextViewOpenSans
+                        android:id="@+id/descriptionYesterday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <ac.kotlintest.view.fragments.TextViewOpenSans
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="Сегодня"
+                        android:textColor="#fff" />
+
+                    <ac.kotlintest.view.fragments.TextViewOpenSans
+                        android:id="@+id/descriptionToday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <ac.kotlintest.view.fragments.TextViewOpenSans
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="Завтра"
+                        android:textColor="#fff" />
+
+                    <ac.kotlintest.view.fragments.TextViewOpenSans
+                        android:id="@+id/descriptionTomorrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <ac.kotlintest.view.fragments.TextViewOpenSans
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="Послезавтра"
+                        android:textColor="#fff" />
+
+                    <ac.kotlintest.view.fragments.TextViewOpenSans
+                        android:id="@+id/descriptionDayAfterTomorrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff" />
 
                 </LinearLayout>
 
@@ -121,10 +326,6 @@
             </LinearLayout>
 
         </ScrollView>
-
-
-
-
 
 
     </LinearLayout>

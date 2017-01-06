@@ -26,7 +26,7 @@ class ChooseYourHoroscope : Fragment(){
         if(until.isConnect(activity)){
             (activity as HoroscopeSettings).setItemHoroscopePosition(v!!.tag.toString())
             (activity as HoroscopeSettings).nextPage()
-            (activity as HoroscopeSettings).getCurrentHoroscope()
+            (activity as HoroscopeSettings).getDailyHoroscope()
         } else
             Snackbar.make(main_container, getString(R.string.check_internet), Snackbar.LENGTH_SHORT).show()
     }

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/main_container"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+
+        <LinearLayout
+            android:id="@+id/container_horo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:background="@drawable/border"
+                    android:id="@+id/aries"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:tag="1"
+                    android:layout_marginRight="2dp"
+                    android:onClick="clickItemHoroscope"
+                    android:src="@drawable/aries" />
+
+                <ImageView
+                    android:background="@drawable/border"
+                    android:id="@+id/taurus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginRight="2dp"
+                    android:tag="2"
+                    android:onClick="clickItemHoroscope"
+                    android:src="@drawable/taurus" />
+
+                <ImageView
+                    android:background="@drawable/border"
+                    android:id="@+id/gemini"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginRight="2dp"
+                    android:tag="3"
+                    android:onClick="clickItemHoroscope"
+                    android:src="@drawable/gemini" />
+
+                <ImageView
+                    android:background="@drawable/border"
+                    android:id="@+id/cancer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:tag="4"
+                    android:onClick="clickItemHoroscope"
+                    android:src="@drawable/cancer" />
+
+                <ImageView
+                    android:background="@drawable/border"
+                    android:id="@+id/leo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginRight="2dp"
+                    android:tag="5"
+                    android:onClick="clickItemHoroscope"
+                    android:src="@drawable/leo" />
+
+                <ImageView
+                    android:background="@drawable/border"
+                    android:id="@+id/virgo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginRight="2dp"
+                    android:tag="6"
+                    android:onClick="clickItemHoroscope"
+                    android:src="@drawable/virgo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal">
+
+
+
+                <ImageView
+                    android:background="@drawable/border"
+                    android:id="@+id/libra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginRight="2dp"
+                    android:tag="7"
+                    android:onClick="clickItemHoroscope"
+                    android:src="@drawable/libra" />
+
+
+                <ImageView
+                    android:background="@drawable/border"
+                    android:id="@+id/scorpio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:tag="8"
+                    android:onClick="clickItemHoroscope"
+                    android:src="@drawable/scorpio" />
+
+                <ImageView
+                    android:layout_marginRight="2dp"
+                    android:background="@drawable/border"
+                    android:id="@+id/sagittarius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:tag="9"
+                    android:onClick="clickItemHoroscope"
+                    android:src="@drawable/sagittarius" />
+
+                <ImageView
+                    android:layout_marginRight="2dp"
+                    android:background="@drawable/border"
+                    android:id="@+id/capricorn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:tag="10"
+                    android:onClick="clickItemHoroscope"
+                    android:src="@drawable/capricorn" />
+
+                <ImageView
+                    android:layout_marginRight="2dp"
+                    android:background="@drawable/border"
+                    android:id="@+id/aquarius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:tag="11"
+                    android:onClick="clickItemHoroscope"
+                    android:src="@mipmap/aquarius" />
+
+                <ImageView
+                    android:layout_marginRight="2dp"
+                    android:background="@drawable/border"
+                    android:id="@+id/pisces"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:tag="12"
+                    android:onClick="clickItemHoroscope"
+                    android:src="@drawable/pisces" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

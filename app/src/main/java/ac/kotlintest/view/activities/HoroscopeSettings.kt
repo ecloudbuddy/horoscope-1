@@ -1,10 +1,10 @@
 package ac.kotlintest.view.activities
 
 import ac.kotlintest.R
-import ac.kotlintest.model.java.DailyHoroscopeJ
+import ac.kotlintest.model.java.Horoscope
 import ac.kotlintest.view.adapters.SettingsPagerAdapter
 import ac.kotlintest.view.fragments.ChooseYourHoroscope
-import ac.kotlintest.view.fragments.DailyHoroscopeFragment
+import ac.kotlintest.view.fragments.HoroscopeFragment
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
@@ -17,26 +17,26 @@ import org.greenrobot.eventbus.ThreadMode
 internal class HoroscopeSettings : AppCompatActivity() {
 
     var chooseYourHoroscopeFragment : ChooseYourHoroscope? = null
-    var dailyHoroscopeFragment : DailyHoroscopeFragment? = null
+    var horoscopeFragment: HoroscopeFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_horoscope_settings)
 
         chooseYourHoroscopeFragment = ChooseYourHoroscope()
-        dailyHoroscopeFragment = DailyHoroscopeFragment()
+        horoscopeFragment = HoroscopeFragment()
 
         settingsViewPager(
-                addSettingsFragmentToAdapter(chooseYourHoroscopeFragment!!, dailyHoroscopeFragment!!)
+                addSettingsFragmentToAdapter(chooseYourHoroscopeFragment!!, horoscopeFragment!!)
         )
     }
 
     //add fragments to adapter
     fun addSettingsFragmentToAdapter(welcomeFr: ChooseYourHoroscope,
-                                     dailyHoroscopeFragmentFr: DailyHoroscopeFragment) : SettingsPagerAdapter {
+                                     horoscopeFragmentFr: HoroscopeFragment) : SettingsPagerAdapter {
         val settingsAdapter = SettingsPagerAdapter(supportFragmentManager)
         settingsAdapter.addFrag(welcomeFr)
-        settingsAdapter.addFrag(dailyHoroscopeFragmentFr)
+        settingsAdapter.addFrag(horoscopeFragmentFr)
 
         return settingsAdapter
     }
@@ -67,11 +67,12 @@ internal class HoroscopeSettings : AppCompatActivity() {
     fun nextPage() { viewpager.currentItem = viewpager.currentItem + 1 }
     fun previewPage() { viewpager.currentItem = viewpager.currentItem - 1 }
 
+    //click listener for fragment
     fun clickItemHoroscope(v: View?){  chooseYourHoroscopeFragment!!.clickItemHoroscope(v) }
 
-    fun setItemHoroscopePosition(pos : String) { dailyHoroscopeFragment!!.horoscopePosition = pos }
+    fun setItemHoroscopePosition(pos : String) { horoscopeFragment!!.horoscopePosition = pos }
 
-    fun getCurrentHoroscope() { dailyHoroscopeFragment!!.getCurrentHoroscope() }
+    fun getDailyHoroscope() { horoscopeFragment!!.getDailyHoroscope() }
 
     //back pressed for fragments
     override fun onBackPressed(){
@@ -83,8 +84,8 @@ internal class HoroscopeSettings : AppCompatActivity() {
 
     //subscriber on data from api
     @Subscribe(threadMode = ThreadMode.ASYNC)
-    fun getSeparatedHoroscope(dailyHoroscope : DailyHoroscopeJ) {
-        dailyHoroscopeFragment!!.setDisplayHoroscopeData(dailyHoroscope)
+    fun getSeparatedHoroscope(dailyHoroscope : Horoscope) {
+        horoscopeFragment!!.setDisplayHoroscopeData(dailyHoroscope)
     }
 }
 

@@ -169,7 +169,7 @@
                     android:padding="10dp"
                     android:tag="11"
                     android:onClick="clickItemHoroscope"
-                    android:src="@drawable/aquarius" />
+                    android:src="@drawable/capricorn" />
 
                 <ImageView
                     android:layout_marginRight="2dp"
