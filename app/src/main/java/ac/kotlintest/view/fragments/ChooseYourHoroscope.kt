@@ -1,8 +1,8 @@
 package ac.kotlintest.view.fragments
 
 import ac.kotlintest.R
+import ac.kotlintest.until.UntilH
 import ac.kotlintest.view.activities.HoroscopeSettings
-import ac.kotlintest.view.until.UntilH
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment

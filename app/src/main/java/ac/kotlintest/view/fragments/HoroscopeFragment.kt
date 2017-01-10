@@ -2,6 +2,7 @@ package ac.kotlintest.view.fragments
 
 import ac.kotlintest.R
 import ac.kotlintest.model.java.Horoscope
+import ac.kotlintest.until.Static
 import ac.kotlintest.view.presenters.DailyHoroscopePresenter
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -19,6 +20,7 @@ class HoroscopeFragment : Fragment() {
     var dailyHoroscope : DailyHoroscopePresenter = DailyHoroscopePresenter()
     var hud : KProgressHUD? = null
     var listButtons : List<RelativeLayout>? = null
+    var staticUrl : Static = Static()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -48,43 +50,43 @@ class HoroscopeFragment : Fragment() {
 
     fun getDailyHoroscope(){
         showProgressDialog()
-        dailyHoroscope.getDailyHoroscope()
+        dailyHoroscope.getHoroscope(staticUrl.URL_DAILY_HOROSCOPE)
         setCurrentItemBg(view!!.daily)
     }
 
     fun getEroHoroscope(){
         showProgressDialog()
-        dailyHoroscope.getEroHoroscope()
+        dailyHoroscope.getHoroscope(staticUrl.URL_ERO_HOROSCOPE)
         setCurrentItemBg(view!!.ero)
     }
 
     fun getAntiHoroscope(){
         showProgressDialog()
-        dailyHoroscope.getAntiHoroscope()
+        dailyHoroscope.getHoroscope(staticUrl.URL_ANTI_HOROSCOPE)
         setCurrentItemBg(view!!.anti)
     }
 
     fun getBusHoroscope(){
         showProgressDialog()
-        dailyHoroscope.getBusHoroscope()
+        dailyHoroscope.getHoroscope(staticUrl.URL_BUSINESS_HOROSCOPE)
         setCurrentItemBg(view!!.bus)
     }
 
     fun getHealHoroscope(){
         showProgressDialog()
-        dailyHoroscope.getHealfHoroscope()
+        dailyHoroscope.getHoroscope(staticUrl.URL_HEAL_HOROSCOPE)
         setCurrentItemBg(view!!.health)
     }
 
     fun getCookHoroscope(){
         showProgressDialog()
-        dailyHoroscope.getCookHoroscope()
+        dailyHoroscope.getHoroscope(staticUrl.URL_COOK_HOROSCOPE)
         setCurrentItemBg(view!!.cook)
     }
 
     fun getLoveHoroscope(){
         showProgressDialog()
-        dailyHoroscope.getLoveHoroscope()
+        dailyHoroscope.getHoroscope(staticUrl.URL_LOVE_HOROSCOPE)
         setCurrentItemBg(view!!.love)
     }
 

@@ -1,4 +1,4 @@
-package ac.kotlintest.view.until
+package ac.kotlintest.until
 
 import android.content.Context
 import android.net.ConnectivityManager
