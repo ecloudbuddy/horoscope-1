@@ -1,6 +1,6 @@
 package ac.kotlintest.view.presenters
 
-import ac.kotlintest.model.java.Horoscope
+import ac.kotlintest.model.pojo.Horoscope
 import ac.kotlintest.modules.AppModule
 import android.util.Log
 import org.greenrobot.eventbus.EventBus
@@ -8,7 +8,7 @@ import rx.Subscriber
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 
-open class DailyHoroscopePresenter {
+open class InfAboutYourHorPresenter {
     var appModule : AppModule? = null
     init {
         appModule = AppModule()

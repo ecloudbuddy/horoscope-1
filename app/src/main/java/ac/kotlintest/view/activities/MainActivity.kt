@@ -1,48 +1,46 @@
 package ac.kotlintest.view.activities
 
 import ac.kotlintest.R
-import ac.kotlintest.model.java.Horoscope
-import ac.kotlintest.view.adapters.SettingsPagerAdapter
-import ac.kotlintest.view.fragments.ChooseYourHoroscope
-import ac.kotlintest.view.fragments.HoroscopeFragment
+import ac.kotlintest.model.pojo.Horoscope
+import ac.kotlintest.view.fragments.ChooseYourHor
+import ac.kotlintest.view.fragments.InfAboutYourHor
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
-import android.view.View
-import kotlinx.android.synthetic.main.activity_horoscope_settings.*
+import kotlinx.android.synthetic.main.main_activity.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
-internal class HoroscopeSettings : AppCompatActivity() {
+internal class MainActivity : AppCompatActivity() {
 
-    var chooseYourHoroscopeFragment : ChooseYourHoroscope? = null
-    var horoscopeFragment: HoroscopeFragment? = null
+    var chooseYourHoroscopeFragment : ChooseYourHor? = null
+    var infAboutYourHor: InfAboutYourHor? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_horoscope_settings)
+        setContentView(R.layout.main_activity)
 
-        chooseYourHoroscopeFragment = ChooseYourHoroscope()
-        horoscopeFragment = HoroscopeFragment()
+        chooseYourHoroscopeFragment = ChooseYourHor()
+        infAboutYourHor = InfAboutYourHor()
 
         settingsViewPager(
-                addSettingsFragmentToAdapter(chooseYourHoroscopeFragment!!, horoscopeFragment!!)
+                addSettingsFragmentToAdapter(chooseYourHoroscopeFragment!!, infAboutYourHor!!)
         )
     }
 
     //add fragments to adapter
-    fun addSettingsFragmentToAdapter(welcomeFr: ChooseYourHoroscope,
-                                     horoscopeFragmentFr: HoroscopeFragment) : SettingsPagerAdapter {
-        val settingsAdapter = SettingsPagerAdapter(supportFragmentManager)
+    fun addSettingsFragmentToAdapter(welcomeFr: ChooseYourHor,
+                                     infAboutYourHorFr: InfAboutYourHor) : ac.kotlintest.view.adapters.ViewPagerAdapter {
+        val settingsAdapter = ac.kotlintest.view.adapters.ViewPagerAdapter(supportFragmentManager)
         settingsAdapter.addFrag(welcomeFr)
-        settingsAdapter.addFrag(horoscopeFragmentFr)
+        settingsAdapter.addFrag(infAboutYourHorFr)
 
         return settingsAdapter
     }
 
     //set settings to view pager
-    fun settingsViewPager(settingsAdapter : SettingsPagerAdapter){
+    fun settingsViewPager(settingsAdapter : ac.kotlintest.view.adapters.ViewPagerAdapter){
         viewpager.setPageTransformer(false, ViewPager.PageTransformer { view, fl ->  view.alpha = Math.abs(Math.abs(fl) - 1) })
 
         viewpager.setBackgroundResource(R.drawable.bg_s3)
@@ -67,12 +65,9 @@ internal class HoroscopeSettings : AppCompatActivity() {
     fun nextPage() { viewpager.currentItem = viewpager.currentItem + 1 }
     fun previewPage() { viewpager.currentItem = viewpager.currentItem - 1 }
 
-    //click listener for fragment
-    fun clickItemHoroscope(v: View?){  chooseYourHoroscopeFragment!!.clickItemHoroscope(v) }
+    fun setItemHoroscopePosition(pos : Int) { infAboutYourHor!!.horoscopePosition = pos }
 
-    fun setItemHoroscopePosition(pos : String) { horoscopeFragment!!.horoscopePosition = pos }
-
-    fun getDailyHoroscope() { horoscopeFragment!!.getDailyHoroscope() }
+    fun getDailyHoroscope() { infAboutYourHor!!.getDailyHoroscope() }
 
     //back pressed for fragments
     override fun onBackPressed(){
@@ -85,7 +80,7 @@ internal class HoroscopeSettings : AppCompatActivity() {
     //subscriber on data from api
     @Subscribe(threadMode = ThreadMode.ASYNC)
     fun getSeparatedHoroscope(dailyHoroscope : Horoscope) {
-        horoscopeFragment!!.setDisplayHoroscopeData(dailyHoroscope)
+        infAboutYourHor!!.setDisplayHoroscopeData(dailyHoroscope)
     }
 }
 

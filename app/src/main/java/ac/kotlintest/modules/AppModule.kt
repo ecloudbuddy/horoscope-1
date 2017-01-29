@@ -1,6 +1,6 @@
 package ac.kotlintest.modules
 
-import ac.kotlintest.model.Api
+import ac.kotlintest.model.api.Api
 import ac.kotlintest.until.LogInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -8,7 +8,7 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.simplexml.SimpleXmlConverterFactory
 import java.util.concurrent.TimeUnit
 
-open class AppModule{
+open class AppModule {
 
     val BASE_URL : String = "http://img.ignio.com/"
     var retrofit : Retrofit? = null

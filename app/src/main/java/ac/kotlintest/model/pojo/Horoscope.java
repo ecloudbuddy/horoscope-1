@@ -1,4 +1,4 @@
-package ac.kotlintest.model.java;
+package ac.kotlintest.model.pojo;
 
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
