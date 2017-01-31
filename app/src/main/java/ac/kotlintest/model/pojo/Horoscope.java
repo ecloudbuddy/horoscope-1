@@ -102,6 +102,7 @@ public class Horoscope {
     public String getPiscesYesterday() {return pisces.yesterday;}
     public String getPiscesTomorrow() {return pisces.tomorrow;}
     public String getPiscesTomorrow02() {return pisces.tomorrow02;}
+
 }
 
 @Root(strict = false)
@@ -113,7 +114,7 @@ class Aries {
 }
 
 @Root(strict = false)
-class Taurus{
+class Taurus {
     @Element(name = "today") public String today;
     @Element(name = "yesterday") public String yesterday;
     @Element(name = "tomorrow") public String tomorrow;
@@ -121,7 +122,7 @@ class Taurus{
 }
 
 @Root(strict = false)
-class Gemini{
+class Gemini {
     @Element(name = "today") public String today;
     @Element(name = "yesterday") public String yesterday;
     @Element(name = "tomorrow") public String tomorrow;
@@ -129,7 +130,7 @@ class Gemini{
 }
 
 @Root(strict = false)
-class Cancer{
+class Cancer  {
     @Element(name = "today") public String today;
     @Element(name = "yesterday") public String yesterday;
     @Element(name = "tomorrow") public String tomorrow;
@@ -137,7 +138,7 @@ class Cancer{
 }
 
 @Root(strict = false)
-class Leo{
+class Leo  {
     @Element(name = "today") public String today;
     @Element(name = "yesterday") public String yesterday;
     @Element(name = "tomorrow") public String tomorrow;
@@ -145,7 +146,7 @@ class Leo{
 }
 
 @Root(strict = false)
-class Virgo{
+class Virgo {
     @Element(name = "today") public String today;
     @Element(name = "yesterday") public String yesterday;
     @Element(name = "tomorrow") public String tomorrow;
@@ -153,7 +154,7 @@ class Virgo{
 }
 
 @Root(strict = false)
-class Libra{
+class Libra  {
     @Element(name = "today") public String today;
     @Element(name = "yesterday") public String yesterday;
     @Element(name = "tomorrow") public String tomorrow;
@@ -162,7 +163,7 @@ class Libra{
 
 
 @Root(strict = false)
-class Scorpio{
+class Scorpio  {
     @Element(name = "today") public String today;
     @Element(name = "yesterday") public String yesterday;
     @Element(name = "tomorrow") public String tomorrow;
@@ -178,7 +179,7 @@ class Sagittarius{
 }
 
 @Root(strict = false)
-class Capricorn{
+class Capricorn  {
     @Element(name = "today") public String today;
     @Element(name = "yesterday") public String yesterday;
     @Element(name = "tomorrow") public String tomorrow;
@@ -186,15 +187,16 @@ class Capricorn{
 }
 
 @Root(strict = false)
-class Aquarius{
+class Aquarius {
     @Element(name = "today") public String today;
     @Element(name = "yesterday") public String yesterday;
     @Element(name = "tomorrow") public String tomorrow;
     @Element(name = "tomorrow02") public String tomorrow02;
+
 }
 
 @Root(strict = false)
-class Pisces{
+class Pisces  {
     @Element(name = "today") public String today;
     @Element(name = "yesterday") public String yesterday;
     @Element(name = "tomorrow") public String tomorrow;

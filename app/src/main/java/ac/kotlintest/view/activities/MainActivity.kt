@@ -1,16 +1,18 @@
 package ac.kotlintest.view.activities
 
 import ac.kotlintest.R
-import ac.kotlintest.model.pojo.Horoscope
+import ac.kotlintest.model.pojo.HoroscopeInfItem
 import ac.kotlintest.view.fragments.ChooseYourHor
 import ac.kotlintest.view.fragments.InfAboutYourHor
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
+import android.widget.Toast
 import kotlinx.android.synthetic.main.main_activity.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
+import java.util.*
 
 internal class MainActivity : AppCompatActivity() {
 
@@ -79,8 +81,18 @@ internal class MainActivity : AppCompatActivity() {
 
     //subscriber on data from api
     @Subscribe(threadMode = ThreadMode.ASYNC)
-    fun getSeparatedHoroscope(dailyHoroscope : Horoscope) {
-        infAboutYourHor!!.setDisplayHoroscopeData(dailyHoroscope)
+    fun getSeparatedHoroscope(list: ArrayList<HoroscopeInfItem>) {
+        infAboutYourHor!!.setDisplayHoroscopeData(list)
+    }
+
+    //subscriber on error from server
+    @Subscribe(threadMode = ThreadMode.ASYNC)
+    fun getErrorFromServer(textError: String){
+        runOnUiThread {
+            infAboutYourHor!!.hideProgressDialog()
+            previewPage()
+            Toast.makeText(baseContext, textError, Toast.LENGTH_SHORT).show()
+        }
     }
 }
 
