@@ -110,20 +110,23 @@ class InfAboutYourHor : Fragment() {
 
     //show progress dialog
     fun showProgressDialog(){
-        if (hud == null)
-            hud = KProgressHUD.create(activity)
+        if(activity != null) {
+            if (hud == null)
+                hud = KProgressHUD.create(activity)
 
-        hud!!.setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
-        hud!!.setCancellable(false)
-        hud!!.setAnimationSpeed(2)
-        if (!activity.isFinishing) {
-            hud!!.show()
+            hud!!.setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+            hud!!.setCancellable(false)
+            hud!!.setAnimationSpeed(2)
+            if (!activity.isFinishing) {
+                hud!!.show()
+            }
         }
     }
 
     //hide progress dialog
     fun hideProgressDialog(){
-        hud!!.dismiss()
+        if(hud != null)
+            hud!!.dismiss()
     }
 
 }
